@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        body
+        {
+            background:lightgreen;
+        }
+        .a
+        {
+            min-height:500px;
+
+        }
+        .b
+        {
+            min-height:400px;
+            margin:30px;
+      
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="row">
+           <div class="col-sm-6 mx-auto a bg-info">
+               <div class="row">
+                   <div class="col-sm-6 mx-auto bg-light p-4 b">
+                       <center><span class="text-warning fs-4"><b>Login Form</b></span></center>
+                       <form method="post">
+                           Email:
+                           <input type="email"name="email"placeholder="Enter Eamil Id"class="form-control"/><br/>
+                           Password:
+                           <input type="password"name="password"placeholder="Enter Your password"class="form-control"/><br/>
+                           <input type="submit"value="Submit"class="form-control bg-info text-light"/>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</body>
+</html>

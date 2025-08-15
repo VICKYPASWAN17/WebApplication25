@@ -1,0 +1,92 @@
+﻿@model System.Data.DataRow
+@{
+    ViewBag.Title = "About";
+}
+
+<form method="post">
+    <span>Registration Form</span><br /><br />
+    <input type="text" name="sr" readonly value="@Model["sr"]" placeholder="Enter sr" class="form-control" /><br />
+    Full Name:
+    <input type="text" name="name" value="@Model["name"]" placeholder="Enter Full Name" class="form-control" /><br />
+    Email:
+    <input type="email" name="email" value="@Model["email"]" placeholder="Entr Email ID" class="form-control" /><br />
+    <input type="password" name="password" value="@Model["password"]" placeholder="Entr password" class="form-control" /><br />
+    Mobile Number:
+    <input type="number" name="number" value="@Model["number"]" placeholder="Mobile number" class="form-control" /><br />
+    Date Of Birth:
+    <input type="date" name="date" value="@Convert.ToDateTime(Model["DOB"]).ToString("yyyy-MM-dd")" class="form-control" /><br />
+    Gender:
+    @if (Model["gender"].ToString().Equals("Male"))
+    {
+        <input type="radio" checked name="gen" value="male" />
+    }
+    else
+    {
+        <input type="radio" name="gen" value="male" />
+    }
+    <span>Male</span>
+    @if (Model["gender"].ToString().Equals("Female"))
+    {
+        <input type="radio"checked name="gen" value="female" />
+
+    }
+    else
+    {
+        <input type="radio" name="gen" value="female" />
+    }
+    <span>Female</span>
+    @if (Model["gender"].ToString().Equals("other"))
+    {
+        <input type="radio" checked name="gen" value="other" />
+    }
+    else
+    {
+        <input type="radio" name="gen" value="other" />
+
+    }
+    <span>Other</span>
+    Address:
+    <textarea style="resize:none;" value="@Model["address"]" class="form-control" name="msg" rows="5" cols="20"></textarea><br />
+    City:
+    <select name="city" value="@Model["city"]" class="form-control">
+    @if (Model["city"].ToString().Trim().Equals("select option"))
+    {
+             <option selected>select option</option>
+    }
+    else
+    {
+                <option>select option</option>
+    }
+    @if (Model["city"].ToString().Trim().Equals("up"))
+    {
+             <option selected>up</option>
+    }
+    else
+    {
+                  <option>up</option>
+    }
+
+
+
+    @if (Model["city"].ToString().Trim().Equals("mp"))
+
+    {
+
+             <option selected>mp</option>
+
+    }    else
+    {
+                <option>mp</option>
+    }
+    @if (Model["city"].ToString().Trim().Equals("Bihar"))
+    {
+        <option selected>Bihar</option>
+    }
+    else
+    {
+        <option>Bihar</option>
+    }
+    </select><br />
+    <input type="number" value="@Model["postalcode"]" name="postal" placehoder="Enter postal code" class="form-control" /><br />
+    <input type="submit" value="Submit" class="form-control" />
+</form>

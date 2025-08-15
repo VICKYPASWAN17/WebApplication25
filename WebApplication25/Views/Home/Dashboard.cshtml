@@ -1,0 +1,47 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<table class="table-bordered table">
+    <tr>
+        <th>Sr</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>password</th>
+        <th>Number</th>
+        <th>DateOfBirth</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>city</th>
+        <th>postalcode</th>
+        <th>Action</th>
+    </tr>
+
+    @if (Model != null)
+    {
+
+        foreach(System.Data.DataRow a in Model.Rows)
+        {
+
+            <tr>
+                <td>i</td>
+                <td>@a["name"]</td>
+                <td>@a["email"]</td>
+                <td>@a["password"]</td>
+                <td>@a["number"]</td>
+                <td>@a["DOB"]</td>
+                <td>@a["gender"]</td>
+                <td>@a["address"]</td>
+                <td>@a["city"]</td>
+                <td>@a["postalcode"]</td>
+                <td><a href="/home/index/@a["sr"]">Delete</a></td>
+                <td><a href="/home/About/@a["sr"]">Edit</a></td>
+
+             
+            </tr>
+        }
+    }
+</table>
